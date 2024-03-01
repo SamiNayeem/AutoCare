@@ -1,11 +1,11 @@
 import { View, Text, StyleSheet } from 'react-native'
-import React from 'react'
+import React, { Dispatch, SetStateAction } from 'react'
 import { TextInput } from 'react-native-gesture-handler'
 
 interface InputProps{
     placeholder:string;
     value:string;
-    setValue:(text:String)=>void;
+    setValue:(text:string)=>void;
 }
 
 const InputField:React.FC<InputProps>=({placeholder,value,setValue})=>{
