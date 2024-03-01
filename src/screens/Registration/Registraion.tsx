@@ -1,8 +1,18 @@
 import React, { useState } from "react";
-import { Text, View } from "react-native";
+import { Button, Text, View } from "react-native";
 import InputField from "../../components/InputField";
 
 const Registration=()=>{ 
+
+    const submit=()=>{
+        console.log("Username:", username);
+        console.log("Email:", email);
+        console.log("Phone:", phone);
+        console.log("Address:", address);
+        console.log("Password:", password);
+        console.log("Confirm Password:", confirmPassword);
+    }
+
     const [username, setUserName]=useState('');
     const [email, setEmail]=useState('');
     const [phone, setPhone]=useState('');
@@ -19,6 +29,7 @@ const Registration=()=>{
             <InputField placeholder="Enter Address" value={address} setValue={setAddress} />
             <InputField placeholder="Enter Password" value={password} setValue={setPassword} />
             <InputField placeholder="Confirm Password" value={confirmPassword} setValue={setConfirmPassword} />
+            <Button title="Submit" onPress={submit} />
         </View>
     )
 }
