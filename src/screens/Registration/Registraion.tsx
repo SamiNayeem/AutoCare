@@ -4,6 +4,7 @@ import InputField from "../../components/TextInput/InputField";
 
 const Registration=(props:any)=>{ 
     const user=props.route.params.usertype;
+    
     const submit=()=>{
         console.log("Username:", username);
         console.log("Email:", email);
