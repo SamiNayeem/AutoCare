@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, View,Text ,TouchableOpacity,ImageBackground, Image} from "react-native";
-import bgImage from '../../../assets/BackgroundImage.jpg';
+
 
 
 
@@ -8,7 +8,7 @@ import GetStartedBtn from "../../../Components/GetStartedBtn/GetStartedBtn";
 
 const GetStarted = () => {
     return (
-      <ImageBackground source={bgImage} style={styles.background}>
+      <ImageBackground source={require('../../../assets/BackgroundImage.jpg')} style={styles.background}>
         <View style={styles.overlay}>
             <Image
                 source={require('../../../assets/autocare logo.png')}
