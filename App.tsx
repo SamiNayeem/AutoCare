@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import GetStarted from './src/Screens/GetStarted/GetStarted';
 import UserLogin from './src/Screens/UserLogin/UserLogin';
 
+
 export default function App() {
   return (
     <View style={styles.container}>

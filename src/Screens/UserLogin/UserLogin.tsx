@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, View, Text, TouchableOpacity, ImageBackground, Image, TextInput } from "react-native";
+import { StyleSheet, View, ScrollView, Text, TouchableOpacity, ImageBackground, Image, TextInput } from "react-native";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 interface CustomTextInputProps {
@@ -38,7 +38,7 @@ const UserLogin: React.FC = () => {
 
   return (
     <ImageBackground source={require('../../../assets/BackgroundImage.jpg')} style={styles.background}>
-      <View style={styles.overlay}>
+      <ScrollView style={styles.overlay}>
         <Image
           source={require('../../../assets/autocare logo.png')}
           style={{ width: 200, height: 100, marginLeft: 120, marginTop: 100 }}
@@ -82,8 +82,13 @@ const UserLogin: React.FC = () => {
               style={{ width: 30, height: 30 }}
             />
           </TouchableOpacity>
+
+          <Text style={styles.alternativeLogin}>_____________New to Autocare? Sign Up_____________</Text>
+          <TouchableOpacity style={styles.signupBtn}>
+            <Text >Sign Up</Text>
+          </TouchableOpacity>
         </View>
-      </View>
+      </ScrollView>
     </ImageBackground>
   );
 }
@@ -185,6 +190,19 @@ const styles = StyleSheet.create({
     fontSize: 15,
     marginLeft: 20,
     marginTop: 10,
-  }
+  },
+  signupBtn: {
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: '#fff',
+    color: '#000',
+    borderRadius: 20,
+    height: 40,
+    marginTop: 20,
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    width: 250,
+    marginBottom: 30,
+}
 });
 
