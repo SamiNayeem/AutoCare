@@ -2,10 +2,6 @@ import React from "react";
 import { StyleSheet, View,Text ,TouchableOpacity,ImageBackground, Image} from "react-native";
 
 
-
-
-import GetStartedBtn from "../../../Components/GetStartedBtn/GetStartedBtn";
-
 const GetStarted = () => {
     return (
       <ImageBackground source={require('../../../assets/BackgroundImage.jpg')} style={styles.background}>
@@ -16,7 +12,9 @@ const GetStarted = () => {
              />
           <View style={styles.containerSecond}>
             <Text style={styles.title}>Welcome to AutoCare</Text>
-            <GetStartedBtn />
+            <TouchableOpacity style={styles.getStartedBtn}>
+                <Text style={styles.btnText}>Get Started</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </ImageBackground>
@@ -36,7 +34,7 @@ const GetStarted = () => {
     },
     containerSecond: {
       flex: 1,
-      justifyContent: 'center',
+      marginTop:80,
       paddingHorizontal: 80,
     },
     title: {
@@ -45,7 +43,18 @@ const GetStarted = () => {
       textAlign: 'center',
       paddingBottom: 25,
       color: '#ffff',
-      padding: 40,
+      // padding: 40,
     },
+    getStartedBtn:{
+      backgroundColor: "#ffff",
+      padding: 10,
+      borderRadius: 10,
+      width: 250,
+      marginTop: 200
+  },
+  btnText:{
+      color: "#000",
+      textAlign: "center"
+  }
   });
   
