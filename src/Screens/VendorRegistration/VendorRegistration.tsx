@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { StyleSheet, View, ScrollView, Text, TouchableOpacity, ImageBackground, Image, TextInput } from "react-native";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-import GoogleBtn from "../../Components/GoogleButton/GoogleButton"
-
 interface CustomTextInputProps {
   icon: string;
   placeholder: string;
@@ -13,7 +11,6 @@ interface CustomTextInputProps {
   autoCorrect?: boolean;
   secureTextEntry?: boolean;
   value: string;
-  // color: string;
   onChangeText: (text: string) => void;
   onPressIcon?: () => void;
 }
@@ -27,16 +24,23 @@ const CustomTextInput: React.FC<CustomTextInputProps> = ({ icon, ...rest }) => {
   );
 };
 
-const UserLogin: React.FC = () => {
+const VendorRegistration: React.FC = () => {
+
+    const [garageName, setGarageName] = useState<string>('');
 
     const [email, setEmail] = useState<string>('');
 
   const [password, setPassword] = useState<string>('');
+    const [confirmationPass, setConfirmationPass] = useState<string>('');
 
   const [showPassword, setShowPassword] = useState<boolean>(false);
+  const [showConfirmationPass, setShowConfirmationPass] = useState<boolean>(false);
 
   const toggleShowPassword = () => {
     setShowPassword(!showPassword);
+  };
+  const toggleShowConfirmationPassword = () => {
+    setShowConfirmationPass(!showConfirmationPass);
   };
 
   return (
@@ -47,7 +51,22 @@ const UserLogin: React.FC = () => {
           style={{ width: 200, height: 100, marginLeft: 120, marginTop: 100 }}
         />
         <View style={styles.LoginContainer}>
-          <Text style={styles.title}>Login</Text>
+          <Text style={styles.title}>Vendor Sign Up</Text>
+
+          <Text style={styles.labels}>Garage Name : </Text>
+          <CustomTextInput
+            placeholder="Enter your garage name"
+            placeholderTextColor="#D3D3D3"
+            keyboardType="email-address"
+            value = {garageName}
+            autoCapitalize="none"
+            autoCorrect={false}
+            icon="garage-variant"
+    
+            onChangeText={setGarageName}
+            
+          />
+
           <Text style={styles.labels}>Email : </Text>
           <CustomTextInput
             placeholder="Enter your email"
@@ -57,7 +76,7 @@ const UserLogin: React.FC = () => {
             autoCapitalize="none"
             autoCorrect={false}
             icon="email-outline"
-            
+    
             onChangeText={setEmail}
             
           />
@@ -73,13 +92,22 @@ const UserLogin: React.FC = () => {
           />
           <Text style={styles.showPasswordText} onPress={toggleShowPassword}>Show Password</Text>
 
+          <Text style={styles.labels}> Confirm Password: </Text>
+          <CustomTextInput
+            placeholder="Enter your password again"
+            placeholderTextColor="#D3D3D3"
+            secureTextEntry={!showConfirmationPass}
+            value={confirmationPass}
+            onChangeText={setConfirmationPass}
+            icon={showConfirmationPass ? 'eye-off-outline' : 'eye-outline'}
+            onPressIcon={toggleShowConfirmationPassword}
+          />
+          <Text style={styles.showPasswordText} onPress={toggleShowConfirmationPassword}>Show Password</Text>
+
           <TouchableOpacity style={styles.loginBtn}>
             <Text style={styles.btnText}>Sign In</Text>
           </TouchableOpacity>
 
-          <Text style={styles.alternativeLogin}>_____________Or, Sign In With_____________</Text>
-
-          <GoogleBtn/>
 
           <Text style={styles.alternativeLogin}>_____________New to Autocare? Sign Up_____________</Text>
           <TouchableOpacity style={styles.signupBtn}>
@@ -91,7 +119,7 @@ const UserLogin: React.FC = () => {
   );
 }
 
-export default UserLogin;
+export default VendorRegistration;
 
 const styles = StyleSheet.create({
   background: {
@@ -188,6 +216,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
     marginLeft: 20,
     marginTop: 10,
+    fontStyle: 'italic',
   },
   signupBtn: {
     alignItems: "center",
