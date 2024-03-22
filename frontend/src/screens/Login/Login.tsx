@@ -8,14 +8,20 @@ const Login=()=>{
     const [email,SetEmail]=useState('');
     const [password,setPassword]=useState('');
     const [usertype,setUserType]=useState('');
-    
+
     var form_data={
         email,
         password,
     }
 
     const submit=async(e:any)=>{
-        const res=await axios.post('http://localhost/8000/api/login')
+        const res=await axios.post('http://localhost:3000/login/data',form_data)
+        .then(res=>{
+            console.log(res.data);
+        })
+        .catch(err=>{
+            console.log(err);
+        })
     }
 
     return(

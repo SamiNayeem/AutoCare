@@ -1,5 +1,5 @@
 import { DataSource } from "typeorm";
-import { Car_Owner } from "./models/carowners";
+import { Car_owner } from "./models/carowner";
 
 const Server=new DataSource({
     type:"postgres",
@@ -8,7 +8,7 @@ const Server=new DataSource({
     username:"postgres",
     password:"admin",
     database:"AutoCare",
-    entities:[Car_Owner],
+    entities:[Car_owner],
     synchronize:true,
 })
 

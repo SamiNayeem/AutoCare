@@ -39,12 +39,6 @@ const Registration=(props:any)=>{
                     <InputField placeholder="Enter Address" value={address} setValue={setAddress} />
                 </>
             }
-            {user=='garage'&&
-                <>
-                    <Text>Enter Your Garage Address</Text>
-                    <InputField placeholder="Enter Address" value={garageAddress} setValue={setGarageAddress} />
-                </>
-            }
             <Text>Set Your Password</Text>
             <InputField placeholder="Enter Password" value={password} setValue={setPassword} />
             <Text>Confirm Password</Text>
