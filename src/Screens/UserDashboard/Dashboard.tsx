@@ -5,12 +5,24 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Services from "../../Components/ServiceTable/Services";
 import { Paragraph } from "react-native-paper";
 
+import { SelectList } from 'react-native-dropdown-select-list'
+
+
 const Dashboard = () => {
   const [showServices, setShowServices] = useState(false);
 
   const handleSave = () => {
     setShowServices(true);
   };
+
+  const [selected, setSelected] = React.useState("");
+
+  const cars = [
+    {key:'1',value:'Lamborghini'},
+    {key:'2',value:'Audi'},
+    {key:'3',value:'Ferrari'},
+    {key:'4',value:'Toyota'},
+  ];
 
   return (
     <ImageBackground source={require('../../../assets/bgimage.jpg')} style={styles.background}>
@@ -24,10 +36,17 @@ const Dashboard = () => {
           <Text style={styles.paragraph}>Enter your Car Model: </Text>
           <View style={styles.topContainer}>
             <View style={styles.textInput}>
-              <TextInput
-                placeholder="Enter your car model"
-                maxLength={25}
-              />
+            <SelectList 
+      // onSelect={() => alert(selected)}
+      setSelected={setSelected} 
+      fontFamily='sans-serif'
+      data={cars}  
+      // arrowicon={<FontAwesome name="chevron-down" size={12} color={'black'} />} 
+      // searchicon={<FontAwesome name="search" size={12} color={'black'} />} 
+      search={false} 
+      boxStyles={{borderRadius:5}} //override default styles
+      placeholder="Select a car"  //default selected option
+    />
             </View>
             <TouchableOpacity style={styles.btn} onPress={handleSave}><Text>Save</Text></TouchableOpacity>
           </View>
@@ -114,6 +133,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 20,
     marginLeft: 10,
+    marginTop: 5,
 
   },
 
