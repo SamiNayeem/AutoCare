@@ -104,7 +104,7 @@ const Services = (props: any) => {
                     <DataTable.Cell style={[styles.cell, selectedServices.includes("Wheel Align") && styles.selectedCell]}>
                         <TouchableOpacity onPress={() => handlePress("Wheel Align")}>
                             <MaterialCommunityIcons name="tire" size={24} color="white" style={styles.icon} />
-                            <Text style={styles.data}>Wheel Align <Text style={styles.amountText}>USD ${servicePrices["Wheel Align"]}</Text></Text>
+                            <Text style={styles.data}>Wheel Aligning <Text style={styles.amountText}>USD ${servicePrices["Wheel Align"]}</Text></Text>
                         </TouchableOpacity>
                     </DataTable.Cell>
                     {/* Service 4 */}
@@ -122,7 +122,7 @@ const Services = (props: any) => {
                     <DataTable.Cell style={[styles.cell, selectedServices.includes("Battery Replace") && styles.selectedCell]}>
                         <TouchableOpacity onPress={() => handlePress("Battery Replace")}>
                             <MaterialCommunityIcons name="current-dc" size={24} color="white" style={styles.icon} />
-                            <Text style={styles.data}>Inspect Shock & Struts <Text style={styles.amountText}>USD ${servicePrices["Battery Replace"]}</Text></Text>
+                            <Text style={styles.data}>Inspect Shock & Struts   <Text style={styles.amountText}>USD ${servicePrices["Battery Replace"]}</Text></Text>
                         </TouchableOpacity>
                     </DataTable.Cell>
                     {/* Service 2 */}
@@ -194,7 +194,7 @@ const styles = StyleSheet.create({
         
     },
     icon: {
-        marginLeft: 12
+        marginLeft: 18
     },
     data: {
         color: '#fff',
@@ -239,7 +239,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     payNow: {
-        fontSize: 20,
+        fontSize: 18,
         fontWeight: 'bold',
         color: '#fff'
     },
