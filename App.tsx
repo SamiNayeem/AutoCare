@@ -8,19 +8,32 @@ import VendorRegistration from './src/Screens/VendorRegistration/VendorRegistrat
 import Dashboard from './src/Screens/UserDashboard/Dashboard';
 
 
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+
+import { createStackNavigator } from '@react-navigation/stack';
+
+
+const Stack = createStackNavigator();
+
 
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      {/* <GetStarted /> */}
-      {/* <UserLogin /> */}
-      {/* <VendorLogin /> */}
-      {/* <UserRegistration /> */}
-      {/* <VendorRegistration/> */}
-      <Dashboard />
-      <StatusBar style="auto" />
-    </View>
+    
+    <NavigationContainer>
+      <Stack.Navigator>
+        
+        <Stack.Screen name="Home" component={GetStarted}/>
+        <Stack.Screen name="User Login" component={UserLogin}/>
+        <Stack.Screen name="Vendor Login" component={VendorLogin}/>
+        <Stack.Screen name="User Registration" component={UserRegistration}/>
+        <Stack.Screen name="Vendor Registration" component={VendorRegistration}/>
+        <Stack.Screen name="Dashboard" component={Dashboard}/>
+        
+      </Stack.Navigator>
+    </NavigationContainer>
+    
   );
 }
 

@@ -2,7 +2,14 @@ import React from "react";
 import { StyleSheet, View,Text ,TouchableOpacity,ImageBackground, Image} from "react-native";
 
 
-const GetStarted = () => {
+
+const GetStarted = (props:any) => {
+  const customerBtn = ()=>{
+    props.navigation.navigate("User Login");
+  }
+  const vendorBtn =()=>{
+    props.navigation.navigate("Vendor Login");
+  }
     return (
       <ImageBackground source={require('../../../assets/BackgroundImage.jpg')} style={styles.background}>
         <View style={styles.overlay}>
@@ -13,10 +20,10 @@ const GetStarted = () => {
           <View style={styles.containerSecond}>
             <Text style={styles.title}>Welcome to AutoCare</Text>
             <View style={styles.getStartedContainer}>
-            <TouchableOpacity style={styles.getStartedBtn}>
+            <TouchableOpacity style={styles.getStartedBtn} onPress={customerBtn}>
                 <Text style={styles.btnText}>I am a customer</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.getStartedBtn}>
+            <TouchableOpacity style={styles.getStartedBtn} onPress={vendorBtn}>
                 <Text style={styles.btnText}>I am a vendor</Text>
             </TouchableOpacity>
             </View>

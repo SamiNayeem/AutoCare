@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, View, Text, TouchableOpacity, ImageBackground, Image, TextInput } from "react-native";
+import { StyleSheet, View, ScrollView, Text, TouchableOpacity, ImageBackground, Image, TextInput } from "react-native";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 interface CustomTextInputProps {
@@ -24,7 +24,7 @@ const CustomTextInput: React.FC<CustomTextInputProps> = ({ icon, ...rest }) => {
   );
 };
 
-const VendorLogin: React.FC = () => {
+const VendorLogin: React.FC = (props:any) => {
 
     const [username, setUsername] = useState<string>('');
 
@@ -36,9 +36,13 @@ const VendorLogin: React.FC = () => {
     setShowPassword(!showPassword);
   };
 
+  const vendorRegBtn = () =>{
+    props.navigation.navigate("Vendor Registration")
+  }
+
   return (
     <ImageBackground source={require('../../../assets/BackgroundImage.jpg')} style={styles.background}>
-      <View style={styles.overlay}>
+      <ScrollView style={styles.overlay}>
         <Image
           source={require('../../../assets/autocare logo.png')}
           style={{ width: 200, height: 100, marginLeft: 120, marginTop: 100 }}
@@ -75,7 +79,7 @@ const VendorLogin: React.FC = () => {
           </TouchableOpacity>
 
           <Text style={styles.alternativeLogin}>_____________New to Autocare? Sign Up_____________</Text>
-          <TouchableOpacity style={styles.signupBtn}>
+          <TouchableOpacity style={styles.signupBtn} onPress={vendorRegBtn}>
             <Text >Sign Up</Text>
           </TouchableOpacity>
           {/* <Text style={styles.alternativeLogin}>_____________Or, Sign In With_____________</Text>
@@ -87,7 +91,7 @@ const VendorLogin: React.FC = () => {
             />
           </TouchableOpacity> */}
         </View>
-      </View>
+      </ScrollView>
     </ImageBackground>
   );
 }
@@ -201,6 +205,7 @@ const styles = StyleSheet.create({
         marginLeft: 'auto',
         marginRight: 'auto',
         width: 250,
+        marginBottom:50,
     }
 });
 

@@ -27,7 +27,7 @@ const CustomTextInput: React.FC<CustomTextInputProps> = ({ icon, ...rest }) => {
   );
 };
 
-const UserLogin: React.FC = () => {
+const UserLogin: React.FC = (props:any) => {
 
     const [email, setEmail] = useState<string>('');
 
@@ -38,6 +38,14 @@ const UserLogin: React.FC = () => {
   const toggleShowPassword = () => {
     setShowPassword(!showPassword);
   };
+
+  const userRegBtn = () =>{
+    props.navigation.navigate("User Registration")
+  }
+
+  const userLoginBtn = () =>{
+    props.navigation.navigate("Dashboard")
+  }
 
   return (
     <ImageBackground source={require('../../../assets/BackgroundImage.jpg')} style={styles.background}>
@@ -73,7 +81,7 @@ const UserLogin: React.FC = () => {
           />
           <Text style={styles.showPasswordText} onPress={toggleShowPassword}>Show Password</Text>
 
-          <TouchableOpacity style={styles.loginBtn}>
+          <TouchableOpacity style={styles.loginBtn} onPress={userLoginBtn}>
             <Text style={styles.btnText}>Sign In</Text>
           </TouchableOpacity>
 
@@ -82,7 +90,7 @@ const UserLogin: React.FC = () => {
           <GoogleBtn/>
 
           <Text style={styles.alternativeLogin}>_____________New to Autocare? Sign Up_____________</Text>
-          <TouchableOpacity style={styles.signupBtn}>
+          <TouchableOpacity style={styles.signupBtn} onPress={userRegBtn}>
             <Text >Sign Up</Text>
           </TouchableOpacity>
         </View>
@@ -98,11 +106,13 @@ const styles = StyleSheet.create({
     flex: 1,
     resizeMode: 'cover',
     width: '100%',
-    height: '100%'
+    height: '100%',
+    
   },
   overlay: {
     flex: 1,
     backgroundColor: 'rgba(0, 0, 0, 0.8)',
+    
   },
   LoginContainer: {
     flex: 1,

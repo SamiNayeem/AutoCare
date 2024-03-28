@@ -105,7 +105,7 @@ const UserRegistration: React.FC = () => {
           <Text style={styles.showPasswordText} onPress={toggleShowConfirmationPassword}>Show Password</Text>
 
           <TouchableOpacity style={styles.loginBtn}>
-            <Text style={styles.btnText}>Sign In</Text>
+            <Text style={styles.btnText}>Sign Up</Text>
           </TouchableOpacity>
 
           <Text style={styles.alternativeLogin}>_____________Or, Sign Up With_____________</Text>
@@ -117,10 +117,7 @@ const UserRegistration: React.FC = () => {
             />
           </TouchableOpacity>
 
-          <Text style={styles.alternativeLogin}>_____________New to Autocare? Sign Up_____________</Text>
-          <TouchableOpacity style={styles.signupBtn}>
-            <Text >Sign Up</Text>
-          </TouchableOpacity>
+          
         </View>
       </ScrollView>
     </ImageBackground>
@@ -198,6 +195,7 @@ const styles = StyleSheet.create({
     marginLeft: 'auto',
     marginRight: 'auto',
     width: 250,
+    marginBottom:50,
   },
   labels: {
     color: '#fff',

@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { StyleSheet, View, ScrollView, Text, TouchableOpacity, ImageBackground, Image, TextInput } from "react-native";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
+import GoogleBtn from "../../Components/GoogleButton/GoogleButton";
+
 interface CustomTextInputProps {
   icon: string;
   placeholder: string;
@@ -105,14 +107,14 @@ const VendorRegistration: React.FC = () => {
           <Text style={styles.showPasswordText} onPress={toggleShowConfirmationPassword}>Show Password</Text>
 
           <TouchableOpacity style={styles.loginBtn}>
-            <Text style={styles.btnText}>Sign In</Text>
+            <Text style={styles.btnText}>Sign Up</Text>
           </TouchableOpacity>
 
 
-          <Text style={styles.alternativeLogin}>_____________New to Autocare? Sign Up_____________</Text>
-          <TouchableOpacity style={styles.signupBtn}>
-            <Text >Sign Up</Text>
-          </TouchableOpacity>
+          <Text style={styles.alternativeLogin}>_____________Or, Sign Up With_____________</Text>
+          <View>
+          <GoogleBtn/>
+          </View>
         </View>
       </ScrollView>
     </ImageBackground>
@@ -230,5 +232,6 @@ const styles = StyleSheet.create({
     marginRight: 'auto',
     width: 250,
     marginBottom: 30,
-}
+},
+
 });

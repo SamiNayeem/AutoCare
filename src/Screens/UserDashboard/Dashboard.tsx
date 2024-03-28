@@ -24,12 +24,14 @@ const Dashboard = () => {
     {key:'4',value:'Toyota'},
   ];
 
+  
+  
   return (
     <ImageBackground source={require('../../../assets/bgimage.jpg')} style={styles.background}>
       <ScrollView style={styles.overlay}>
         <Image
           source={require('../../../assets/autocare logo.png')}
-          style={{ width: 100, height: 100, marginLeft: 150, }}
+          style={{ width: 80, height: 80, marginLeft: 150, }}
         />
         <Text style={styles.title}>AutoCare Dashboard</Text>
         <View>
@@ -43,12 +45,12 @@ const Dashboard = () => {
       data={cars}  
       // arrowicon={<FontAwesome name="chevron-down" size={12} color={'black'} />} 
       // searchicon={<FontAwesome name="search" size={12} color={'black'} />} 
-      search={false} 
-      boxStyles={{borderRadius:5}} //override default styles
+      search={true} 
+      
       placeholder="Select a car"  //default selected option
     />
             </View>
-            <TouchableOpacity style={styles.btn} onPress={handleSave}><Text>Save</Text></TouchableOpacity>
+            <TouchableOpacity style={styles.btn} onPress={handleSave}><Text>Proceed</Text></TouchableOpacity>
           </View>
         </View>
         {showServices && (
@@ -77,8 +79,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0, 0, 0, 0.5', // Adjust opacity here (0.5 = 50% opacity)
     height: '100%',
     width: '100%',
-    paddingTop: 60,
-    paddingLeft: 10,
+    paddingTop: 20,
+    paddingLeft: 5,
     
     
   },
@@ -99,7 +101,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     width: 250,
     height: 100,
-    marginTop: 60,
+    marginTop: 40,
     marginLeft: 'auto',
     marginRight: 'auto',
   },
@@ -127,21 +129,22 @@ const styles = StyleSheet.create({
 
   btn:{
     backgroundColor: '#3DBDFF',
-    width: 70,
+    width: 80,
     height:40,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 20,
     marginLeft: 10,
-    marginTop: 5,
+    marginTop: 7,
 
   },
 
   textInput:{
     backgroundColor: '#fff',
-    borderRadius: 5,
-    padding: 5,
+    borderRadius: 10,
+    padding: 0,
     width: 270,
+    marginTop: 5
   },
 
   topContainer:{
