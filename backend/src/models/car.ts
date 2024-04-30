@@ -15,6 +15,7 @@ export class Car{
     @Column({ type:'date' })
     last_service:string;
 
-    @OneToOne(type=>Car_owner)@JoinColumn()
-    owner:string
+    @OneToOne(()=>Car_owner, (car_owner)=>car_owner.car)
+    @JoinColumn()
+    car_owner:Car_owner
 }

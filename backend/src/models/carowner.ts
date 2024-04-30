@@ -1,4 +1,6 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Car } from "./car";
+import { Service_order } from "./serviceorder";
 
 @Entity('Car_owner')
 export class Car_owner{
@@ -22,4 +24,10 @@ export class Car_owner{
 
     @Column()
     password:string;
+
+    @OneToOne(()=>Car,(car)=>car.car_owner)
+    car:Car;
+
+    @OneToMany(()=>Service_order,(orders)=>orders.carOwner)
+    orders:Service_order[]
 }

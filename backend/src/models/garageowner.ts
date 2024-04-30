@@ -1,7 +1,10 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Garage } from "./garage";
+import { Service_list } from "./servicelist";
+import { Service_order } from "./serviceorder";
 
 @Entity('Garage_owners')
-export class Garage_owners{
+export class Garage_owner{
     @PrimaryGeneratedColumn('increment')
     id:number;
 
@@ -19,4 +22,13 @@ export class Garage_owners{
 
     @Column()
     password:string;
+
+    @OneToOne(()=>Garage,(garage)=>garage.garade_owner)
+    garage:Garage;
+
+    @OneToMany(()=>Service_list,(services)=>services.garageOwner)
+    services:Service_list[]
+
+    @OneToMany(()=>Service_order,(orders)=>orders.garageOwner)
+    orders:Service_order[]
 }
