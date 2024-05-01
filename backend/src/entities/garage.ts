@@ -18,7 +18,6 @@ export class Garage extends BaseEntity{
     @JoinColumn()
     garage_owner:Garage_owner;
 
-    
     @OneToMany(()=>Service_list,(services)=>services.garage)
     services:Service_list[];
 

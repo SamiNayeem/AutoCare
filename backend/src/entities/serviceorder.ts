@@ -1,5 +1,4 @@
 import { BaseEntity, Column, Entity, JoinColumn, ManyToOne, OneToOne, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
-import { Garage_owner } from "./garageowner";
 import { Car_owner } from "./carowner";
 import { Garage } from "./garage";
 
@@ -19,6 +18,9 @@ export class Service_order extends BaseEntity{
 
     @Column()
     service_date:string;
+
+    @Column()
+    service_end_date:string;
 
     @ManyToOne(()=>Garage,(garage)=>garage.orders)
     garage:Garage;
