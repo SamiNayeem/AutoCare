@@ -52,7 +52,7 @@ const UserLogin: React.FC = (props:any) => {
       <ScrollView style={styles.overlay}>
         <Image
           source={require('../../../assets/autocare logo.png')}
-          style={{ width: 200, height: 100, marginLeft: 120, marginTop: 100 }}
+          style={{ width: 120, height: 100, marginLeft: 150, marginTop: 50 }}
         />
         <View style={styles.LoginContainer}>
           <Text style={styles.title}>Login</Text>
@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
   },
   LoginContainer: {
     flex: 1,
-    marginTop: 80,
+    marginTop: 40,
     paddingHorizontal: 'auto',
   },
   title: {
@@ -135,7 +135,8 @@ const styles = StyleSheet.create({
     marginLeft: 'auto',
     marginRight: 'auto',
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
+    borderColor:'#fff'
   },
   input: {
     height: 40,
@@ -187,8 +188,8 @@ const styles = StyleSheet.create({
   alternativeLogin: {
     fontSize: 15,
     textAlign: 'center',
-    color: '#ffff',
-    marginTop: 20,
+    color: '#fff',
+    marginTop: 10,
   },
   icon: {
     marginLeft: 10,

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { StyleSheet, View, ScrollView, Text, TouchableOpacity, ImageBackground, Image, TextInput } from "react-native";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { useNavigation } from "@react-navigation/native";
 
 interface CustomTextInputProps {
   icon: string;
@@ -24,7 +25,7 @@ const CustomTextInput: React.FC<CustomTextInputProps> = ({ icon, ...rest }) => {
   );
 };
 
-const UserRegistration: React.FC = () => {
+const UserRegistration: React.FC = (props:any) => {
 
     const [name, setName] = useState<string>('');
 
@@ -42,13 +43,20 @@ const UserRegistration: React.FC = () => {
   const toggleShowConfirmationPassword = () => {
     setShowConfirmationPass(!showConfirmationPass);
   };
+//navigation working
+ const  navigation=useNavigation();
+
+ const signupBtn = () =>{
+  props.navigation.navigate("User Login")
+ }
+
 
   return (
     <ImageBackground source={require('../../../assets/BackgroundImage.jpg')} style={styles.background}>
       <ScrollView style={styles.overlay}>
         <Image
           source={require('../../../assets/autocare logo.png')}
-          style={{ width: 200, height: 100, marginLeft: 120, marginTop: 100 }}
+          style={{ width: 120, height: 100, marginLeft: 150, marginTop: 50 }}
         />
         <View style={styles.LoginContainer}>
           <Text style={styles.title}>Sign Up</Text>
@@ -104,8 +112,8 @@ const UserRegistration: React.FC = () => {
           />
           <Text style={styles.showPasswordText} onPress={toggleShowConfirmationPassword}>Show Password</Text>
 
-          <TouchableOpacity style={styles.loginBtn}>
-            <Text style={styles.btnText}>Sign Up</Text>
+          <TouchableOpacity style={styles.loginBtn} onPress={signupBtn}>
+            <Text style={styles.btnText} >Sign Up</Text>
           </TouchableOpacity>
 
           <Text style={styles.alternativeLogin}>_____________Or, Sign Up With_____________</Text>
@@ -139,7 +147,7 @@ const styles = StyleSheet.create({
   },
   LoginContainer: {
     flex: 1,
-    marginTop: 80,
+    marginTop: 40,
     paddingHorizontal: 'auto',
   },
   title: {
@@ -158,7 +166,8 @@ const styles = StyleSheet.create({
     marginLeft: 'auto',
     marginRight: 'auto',
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
+    borderColor: '#fff'
   },
   input: {
     height: 40,
@@ -221,7 +230,7 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 15,
     marginLeft: 20,
-    marginTop: 10,
+    marginTop: 5,
     fontStyle: 'italic',
   },
   signupBtn: {

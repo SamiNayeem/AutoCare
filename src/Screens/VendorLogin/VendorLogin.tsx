@@ -40,12 +40,16 @@ const VendorLogin: React.FC = (props:any) => {
     props.navigation.navigate("Vendor Registration")
   }
 
+  const vendorLogin = () =>{
+    props.navigation.navigate("RequestedServices")
+  }
+
   return (
     <ImageBackground source={require('../../../assets/BackgroundImage.jpg')} style={styles.background}>
       <ScrollView style={styles.overlay}>
         <Image
           source={require('../../../assets/autocare logo.png')}
-          style={{ width: 200, height: 100, marginLeft: 120, marginTop: 100 }}
+          style={{ width: 100, height: 80, marginLeft: 150, marginTop: 20 }}
         />
         <View style={styles.LoginContainer}>
           <Text style={styles.title}>Vendor Login</Text>
@@ -74,7 +78,7 @@ const VendorLogin: React.FC = (props:any) => {
           />
           <Text style={styles.showPasswordText} onPress={toggleShowPassword}>Show Password</Text>
 
-          <TouchableOpacity style={styles.loginBtn}>
+          <TouchableOpacity style={styles.loginBtn} onPress={vendorLogin}>
             <Text style={styles.btnText}>Sign In</Text>
           </TouchableOpacity>
 
@@ -130,7 +134,8 @@ const styles = StyleSheet.create({
     marginLeft: 'auto',
     marginRight: 'auto',
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
+    borderColor: '#fff'
   },
   input: {
     height: 40,

@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginLeft: 'auto',
     marginRight: 'auto',
-    marginBottom:50,
+    marginBottom:15,
     width: 250,
     }
 });
