@@ -6,13 +6,7 @@ const Registration=(props:any)=>{
     const user=props.route.params.usertype;
     
     const submit=()=>{
-        console.log("Username:", username);
-        console.log("Email:", email);
-        console.log("Phone:", phone);
-        console.log("Address:", address);
-        console.log("Password:", password);
-        console.log("Confirm Password:", confirmPassword);
-        console.log("User Type:", user);
+
     }
 
     const [username, setUserName]=useState('');

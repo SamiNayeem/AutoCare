@@ -12,10 +12,11 @@ const Login=()=>{
     var form_data={
         email,
         password,
+        usertype,
     }
 
     const submit=async(e:any)=>{
-        const res=await axios.post('http://localhost:3000/login/data',form_data)
+        const res=await axios.post('http://10.0.2.2:3000/api/userregistration',form_data)
         .then(res=>{
             console.log(res.data);
         })
