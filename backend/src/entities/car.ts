@@ -10,10 +10,13 @@ export class Car extends BaseEntity{
     name:string;
 
     @Column()
-    milage:number;
+    milage:string;
     
-    @Column({ type:'date' })
-    last_service:string;
+    @Column()
+    last_service_date:string;
+
+    @Column()
+    last_service_name:string;
 
     @OneToOne(()=>Car_owner, (car_owner)=>car_owner.car)
     @JoinColumn()

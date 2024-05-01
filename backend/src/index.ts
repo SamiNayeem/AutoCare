@@ -9,6 +9,8 @@ import express from "express"
 import { registerUserRouter } from "./routes/car_owner_registration"
 import { registerVendorRouter } from "./routes/garage_owner_registration"
 import { userLoginRouter } from "./routes/userlogin"
+import { addCarRouter } from "./routes/add_car"
+import { addGarageRouter } from "./routes/add_garage"
 
 const app=express();
 const port=3000;
@@ -33,6 +35,8 @@ Server.initialize()
         app.use(registerUserRouter);
         app.use(registerVendorRouter);
         app.use(userLoginRouter);
+        app.use(addCarRouter);
+        app.use(addGarageRouter);
 
         app.listen(port,()=>{
             console.log(`Server is up and running at http://localhost:${port}`);

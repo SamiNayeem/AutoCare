@@ -1,5 +1,5 @@
 import { BaseEntity, Column, Entity, JoinColumn, ManyToMany, ManyToOne, OneToOne, PrimaryGeneratedColumn } from "typeorm";
-import { Garage_owner } from "./garageowner";
+import { Garage } from "./garage";
 
 @Entity('Service_list')
 export class Service_list extends BaseEntity{
@@ -42,6 +42,6 @@ export class Service_list extends BaseEntity{
     @Column()
     engine_dignosis:string;
 
-    @ManyToOne(()=>Garage_owner,(garage_owner)=>garage_owner.services)
-    garageOwner:Garage_owner;
+    @ManyToOne(()=>Garage,(garage)=>garage.services)
+    garage:Garage;
 }

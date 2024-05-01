@@ -22,8 +22,13 @@ router.post('/api/userregistration',async(req,res)=>{
         password:password,
     });
 
-    await user.save();
-    res.send("User created successfully");
+    try{
+        await user.save();
+        res.send("User created successfully");
+    }
+    catch(error){
+        console.log(error);
+    }
 });
 
 export {

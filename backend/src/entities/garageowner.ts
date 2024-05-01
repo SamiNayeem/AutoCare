@@ -23,12 +23,6 @@ export class Garage_owner extends BaseEntity{
     @Column()
     password:string;
 
-    @OneToOne(()=>Garage,(garage)=>garage.garade_owner)
+    @OneToOne(()=>Garage,(garage)=>garage.garage_owner)
     garage:Garage;
-
-    @OneToMany(()=>Service_list,(services)=>services.garageOwner)
-    services:Service_list[]
-
-    @OneToMany(()=>Service_order,(orders)=>orders.garageOwner)
-    orders:Service_order[]
 }

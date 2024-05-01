@@ -17,8 +17,11 @@ export class Service_order extends BaseEntity{
     @Column()
     service_name:string;
 
-    @ManyToOne(()=>Garage_owner,(garage_owner)=>garage_owner.orders)
-    garageOwner:Garage_owner;
+    @Column()
+    service_date:string;
+
+    @ManyToOne(()=>Garage,(garage)=>garage.orders)
+    garage:Garage;
 
     @ManyToOne(()=>Car_owner,(car_owner)=>car_owner.orders)
     carOwner:Car_owner;
