@@ -7,14 +7,14 @@ router.post('/api/view-order',async(req,res)=>{
     const{
         garage_id,
     }=req.body;
-
+    
     const order=await Service_order
-    .getRepository()
-    .createQueryBuilder('order')
-    .where("order.garageId=:garage_id",{garage_id})
-    .getOne();
+        .getRepository()
+        .createQueryBuilder('order')
+        .where("order.garageId=:garage_id",{garage_id})
+        .getMany();
 
-
+    res.send(order);
 });
 
 export{

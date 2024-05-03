@@ -11,7 +11,8 @@ import { registerVendorRouter } from "./routes/garage_owner_registration"
 import { userLoginRouter } from "./routes/user_login"
 import { addCarRouter } from "./routes/add_car"
 import { addGarageRouter } from "./routes/add_garage"
-import { updateUserRouter } from "./routes/update_user"
+import { viewOrderRouter } from "./routes/view_order"
+import { updateOrderRouter } from "./routes/update_order"
 
 const app=express();
 const port=3000;
@@ -38,7 +39,8 @@ Server.initialize()
         app.use(userLoginRouter);
         app.use(addCarRouter);
         app.use(addGarageRouter);
-        app.use(updateUserRouter);
+        app.use(viewOrderRouter);
+        app.use(updateOrderRouter);
 
         app.listen(port,()=>{
             console.log(`Server is up and running at http://localhost:${port}`);
