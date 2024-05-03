@@ -4,7 +4,7 @@ import { Garage_owner } from "../entities/garageowner";
 
 const router=express.Router();
 
-router.post('/api/userlogin',async(req,res)=>{
+router.post('/api/user-login',async(req,res)=>{
     console.log('login');
     const{
         email,

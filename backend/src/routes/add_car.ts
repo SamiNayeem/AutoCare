@@ -3,7 +3,7 @@ import { Car } from ".././entities/car"
 
 const router=express.Router()
 
-router.post('/api/addcar',async(req,res)=>{
+router.post('/api/add-car',async(req,res)=>{
     const{
         name,
         milage,

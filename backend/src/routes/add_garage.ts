@@ -3,7 +3,7 @@ import { Garage } from ".././entities/garage";
 
 const router=express.Router()
 
-router.post('/api/addgarage',async(req,res)=>{
+router.post('/api/add-garage',async(req,res)=>{
     const{
         name,
         address,

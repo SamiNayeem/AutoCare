@@ -22,6 +22,9 @@ export class Service_order extends BaseEntity{
     @Column()
     service_end_date:string;
 
+    @Column({default:'pending'})
+    status:string;
+
     @ManyToOne(()=>Garage,(garage)=>garage.orders)
     garage:Garage;
 

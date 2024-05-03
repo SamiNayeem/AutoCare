@@ -3,7 +3,7 @@ import { Car_owner } from ".././entities/carowner";
 
 const router=express.Router();
 
-router.post('/api/userregistration',async(req,res)=>{
+router.post('/api/user-registration',async(req,res)=>{
     const{
         firstname,
         lastname,

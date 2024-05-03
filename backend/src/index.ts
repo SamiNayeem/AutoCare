@@ -8,9 +8,10 @@ import { Service_order } from "./entities/serviceorder"
 import express from "express"
 import { registerUserRouter } from "./routes/car_owner_registration"
 import { registerVendorRouter } from "./routes/garage_owner_registration"
-import { userLoginRouter } from "./routes/userlogin"
+import { userLoginRouter } from "./routes/user_login"
 import { addCarRouter } from "./routes/add_car"
 import { addGarageRouter } from "./routes/add_garage"
+import { updateUserRouter } from "./routes/update_user"
 
 const app=express();
 const port=3000;
@@ -37,6 +38,7 @@ Server.initialize()
         app.use(userLoginRouter);
         app.use(addCarRouter);
         app.use(addGarageRouter);
+        app.use(updateUserRouter);
 
         app.listen(port,()=>{
             console.log(`Server is up and running at http://localhost:${port}`);

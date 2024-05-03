@@ -3,7 +3,7 @@ import { Service_order } from ".././entities/serviceorder";
 
 const router=express.Router()
 
-router.post('/api/placeorder',async(req,res)=>{
+router.post('/api/place-order',async(req,res)=>{
     const{
         home_delivery,
         address,
