@@ -7,6 +7,7 @@ import UserRegistration from './src/Screens/UserRegistration/UserRegistration';
 import VendorRegistration from './src/Screens/VendorRegistration/VendorRegistration';
 import Dashboard from './src/Screens/UserDashboard/Dashboard';
 import RequestedServices from './src/Screens/RequestedServices/RequestedServices';
+import VendorDashboard from './src/Screens/VendorDashboard/VendorDashboard';
 
 
 import * as React from 'react';
@@ -33,6 +34,7 @@ export default function App() {
         <Stack.Screen name="Vendor Registration" component={VendorRegistration}/>
         <Stack.Screen name="Dashboard" component={Dashboard}/>
         <Stack.Screen name="RequestedServices" component={RequestedServices}/>
+        <Stack.Screen name="VendorDashboard" component={VendorDashboard}/>
         
       </Stack.Navigator>
     </NavigationContainer>

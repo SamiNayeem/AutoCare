@@ -41,7 +41,7 @@ const VendorLogin: React.FC = (props:any) => {
   }
 
   const vendorLogin = () =>{
-    props.navigation.navigate("RequestedServices")
+    props.navigation.navigate("VendorDashboard")
   }
 
   return (

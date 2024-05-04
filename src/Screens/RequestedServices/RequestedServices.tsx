@@ -66,7 +66,7 @@ const RequestedServices = () => {
                 <Text style={styles.title}>Pending Requests</Text>
                 <DataTable style={styles.dataTable}>
                     <DataTable.Header style={styles.dataTableHeader}>
-                        <DataTable.Title style={[styles.cell, { width: '20%', backgroundColor: 'red' }]}><Text style={styles.dataTableTitle}>Services</Text></DataTable.Title>
+                        <DataTable.Title style={[styles.cell, { width: '20%', backgroundColor: '' }]}><Text style={styles.dataTableTitle}>Services</Text></DataTable.Title>
                         <DataTable.Title style={[styles.cell, { width: '30%' }]}><Text style={styles.dataTableTitle}>Phone Number</Text></DataTable.Title>
                         <DataTable.Title style={[styles.cell, { width: '40%' }]}><Text style={styles.dataTableTitle}>Actions</Text></DataTable.Title>
                     </DataTable.Header>
